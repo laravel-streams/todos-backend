@@ -1240,16 +1240,16 @@
         },
         {
             "name": "jaybizzle/crawler-detect",
-            "version": "v1.2.106",
+            "version": "v1.2.107",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JayBizzle/Crawler-Detect.git",
-                "reference": "78bf6792cbf9c569dc0bf2465481978fd2ed0de9"
+                "reference": "62b9055b555be9e1479d7c37515d7c58975c2aa4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/78bf6792cbf9c569dc0bf2465481978fd2ed0de9",
-                "reference": "78bf6792cbf9c569dc0bf2465481978fd2ed0de9",
+                "url": "https://api.github.com/repos/JayBizzle/Crawler-Detect/zipball/62b9055b555be9e1479d7c37515d7c58975c2aa4",
+                "reference": "62b9055b555be9e1479d7c37515d7c58975c2aa4",
                 "shasum": ""
             },
             "require": {
@@ -1286,9 +1286,9 @@
             ],
             "support": {
                 "issues": "https://github.com/JayBizzle/Crawler-Detect/issues",
-                "source": "https://github.com/JayBizzle/Crawler-Detect/tree/v1.2.106"
+                "source": "https://github.com/JayBizzle/Crawler-Detect/tree/v1.2.107"
             },
-            "time": "2021-05-24T20:30:32+00:00"
+            "time": "2021-10-12T16:06:07+00:00"
         },
         {
             "name": "jenssegers/agent",
@@ -3625,12 +3625,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-streams/streams-api.git",
-                "reference": "bcd197c32c87ebe9aa6f1f908ec2093d9d0849c4"
+                "reference": "73f64d831af468224258b6bc1aa63d9711454c2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-streams/streams-api/zipball/bcd197c32c87ebe9aa6f1f908ec2093d9d0849c4",
-                "reference": "bcd197c32c87ebe9aa6f1f908ec2093d9d0849c4",
+                "url": "https://api.github.com/repos/laravel-streams/streams-api/zipball/73f64d831af468224258b6bc1aa63d9711454c2a",
+                "reference": "73f64d831af468224258b6bc1aa63d9711454c2a",
                 "shasum": ""
             },
             "require": {
@@ -3668,7 +3668,7 @@
                 "issues": "https://github.com/laravel-streams/streams-api/issues",
                 "source": "https://github.com/laravel-streams/streams-api/tree/1.0"
             },
-            "time": "2021-10-13T04:29:03+00:00"
+            "time": "2021-10-14T04:41:12+00:00"
         },
         {
             "name": "streams/core",
@@ -3676,12 +3676,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-streams/streams-core.git",
-                "reference": "e866e1454a2614b13e6d2c274a2856bca06be49b"
+                "reference": "07651ffe9157b72b965dc87f15d88b76eabde694"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-streams/streams-core/zipball/e866e1454a2614b13e6d2c274a2856bca06be49b",
-                "reference": "e866e1454a2614b13e6d2c274a2856bca06be49b",
+                "url": "https://api.github.com/repos/laravel-streams/streams-core/zipball/07651ffe9157b72b965dc87f15d88b76eabde694",
+                "reference": "07651ffe9157b72b965dc87f15d88b76eabde694",
                 "shasum": ""
             },
             "require": {
@@ -3740,7 +3740,7 @@
                 "issues": "https://github.com/laravel-streams/streams-core/issues",
                 "source": "https://github.com/laravel-streams/streams-core/tree/2.0"
             },
-            "time": "2021-10-13T04:26:28+00:00"
+            "time": "2021-10-13T18:11:52+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

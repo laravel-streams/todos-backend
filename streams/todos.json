@@ -18,20 +18,19 @@
     "ui": [],
     "api": [],
     "data": {
-        "1": {
-            "id": 1,
-            "title": "Finish React frontend.",
-            "completed": false
-        },
         "2": {
             "id": 2,
-            "title": "Write Todos CP/API config.",
-            "completed": false
+            "title": "Write Todos CP\/API config.",
+            "complete": true
         },
         "3": {
             "id": 3,
             "title": "Write Todos starter docs.",
-            "completed": false
+            "complete": true
+        },
+        "1634186354579": {
+            "title": "New test task",
+            "complete": true
         }
     }
 }
