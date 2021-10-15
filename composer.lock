@@ -2585,21 +2585,21 @@
         },
         {
             "name": "nette/schema",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/schema.git",
-                "reference": "f5ed39fc96358f922cedfd1e516f0dadf5d2be0d"
+                "reference": "9a39cef03a5b34c7de64f551538cbba05c2be5df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/schema/zipball/f5ed39fc96358f922cedfd1e516f0dadf5d2be0d",
-                "reference": "f5ed39fc96358f922cedfd1e516f0dadf5d2be0d",
+                "url": "https://api.github.com/repos/nette/schema/zipball/9a39cef03a5b34c7de64f551538cbba05c2be5df",
+                "reference": "9a39cef03a5b34c7de64f551538cbba05c2be5df",
                 "shasum": ""
             },
             "require": {
-                "nette/utils": "^3.1.4 || ^4.0",
-                "php": ">=7.1 <8.1"
+                "nette/utils": "^2.5.7 || ^3.1.5 ||  ^4.0",
+                "php": ">=7.1 <8.2"
             },
             "require-dev": {
                 "nette/tester": "^2.3 || ^2.4",
@@ -2641,9 +2641,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/schema/issues",
-                "source": "https://github.com/nette/schema/tree/v1.2.1"
+                "source": "https://github.com/nette/schema/tree/v1.2.2"
             },
-            "time": "2021-03-04T17:51:11+00:00"
+            "time": "2021-10-15T11:40:02+00:00"
         },
         {
             "name": "nette/utils",
@@ -3625,12 +3625,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-streams/streams-api.git",
-                "reference": "73f64d831af468224258b6bc1aa63d9711454c2a"
+                "reference": "02ef36df02c18c3da27eb9f56c83ec6709085598"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-streams/streams-api/zipball/73f64d831af468224258b6bc1aa63d9711454c2a",
-                "reference": "73f64d831af468224258b6bc1aa63d9711454c2a",
+                "url": "https://api.github.com/repos/laravel-streams/streams-api/zipball/02ef36df02c18c3da27eb9f56c83ec6709085598",
+                "reference": "02ef36df02c18c3da27eb9f56c83ec6709085598",
                 "shasum": ""
             },
             "require": {
@@ -3668,7 +3668,7 @@
                 "issues": "https://github.com/laravel-streams/streams-api/issues",
                 "source": "https://github.com/laravel-streams/streams-api/tree/1.0"
             },
-            "time": "2021-10-14T04:41:12+00:00"
+            "time": "2021-10-15T17:49:37+00:00"
         },
         {
             "name": "streams/core",
@@ -3676,12 +3676,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-streams/streams-core.git",
-                "reference": "58a06cc7ac223b4c8d204eea240c333828450937"
+                "reference": "4d80941bc8d0f3976baa7c64a9c25ce45ad67bc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-streams/streams-core/zipball/58a06cc7ac223b4c8d204eea240c333828450937",
-                "reference": "58a06cc7ac223b4c8d204eea240c333828450937",
+                "url": "https://api.github.com/repos/laravel-streams/streams-core/zipball/4d80941bc8d0f3976baa7c64a9c25ce45ad67bc0",
+                "reference": "4d80941bc8d0f3976baa7c64a9c25ce45ad67bc0",
                 "shasum": ""
             },
             "require": {
@@ -3740,7 +3740,7 @@
                 "issues": "https://github.com/laravel-streams/streams-core/issues",
                 "source": "https://github.com/laravel-streams/streams-core/tree/2.0"
             },
-            "time": "2021-10-14T06:33:07+00:00"
+            "time": "2021-10-15T17:49:19+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
