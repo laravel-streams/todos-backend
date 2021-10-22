@@ -1,16 +1,17 @@
 {
     "name": "Todos",
+    "handle": "todos",
     "description": "An example todos backend.",
     "source": {
         "type": "self"
     },
     "fields": {
         "id": {
-            "type": "text",
+            "type": "string",
             "required": true
         },
         "title": {
-            "type": "text",
+            "type": "string",
             "required": true
         },
         "complete": "boolean"
