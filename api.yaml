@@ -1,0 +1,749 @@
+openapi: 3.0.2
+info:
+    title: 'Streams API Specification'
+    description: 'For using the "streams/api" package.'
+    termsOfService: 'http://localhost/terms'
+    contact:
+        name: 'API Team'
+        url: 'http://example.io'
+        email: apiteam@example.io
+    license:
+        name: 'Apache 2.0'
+        url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    version: v1
+servers:
+    -
+        url: 'http://localhost/api'
+paths:
+    /api/streams/core.streams/entries:
+        get:
+            tags:
+                - Core.streams
+            summary: 'List multiple entries.'
+            operationId: core.streams.index
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            total:
+                                                type: integer
+                                            per_page:
+                                                type: integer
+                                            last_page:
+                                                type: integer
+                                            current_page:
+                                                type: integer
+                                            stream:
+                                                type: string
+                                            query:
+                                                type: array
+                                    links:
+                                        type: object
+                                        properties:
+                                            first_page:
+                                                type: string
+                                            next_page:
+                                                type: string
+                                                nullable: true
+                                            previous_page:
+                                                type: string
+                                                nullable: true
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/core.streams'
+        post:
+            tags:
+                - Core.streams
+            summary: 'Create a new entry.'
+            operationId: core.streams.create
+            responses:
+                200:
+                    description: 'Entry created successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/core.streams'
+                                    links:
+                                        type: object
+                                        properties:
+                                            location:
+                                                description: 'The URL of the newly created entry.'
+                                                type: string
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/core.streams'
+    '/api/streams/core.streams/entries/{id}':
+        get:
+            tags:
+                - Core.streams
+            summary: 'Show an entry.'
+            operationId: core.streams.show
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                    links:
+                                        type: object
+                                        properties:
+                                            self:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            entries:
+                                                type: string
+                                    data:
+                                        $ref: '#/components/schemas/core.streams'
+        put:
+            tags:
+                - Core.streams
+            summary: 'Update an entry.'
+            operationId: core.streams.update
+            responses:
+                200:
+                    description: 'Entry updated successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/core.streams'
+                                    links:
+                                        type: object
+                                        properties:
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/core.streams'
+        patch:
+            tags:
+                - Core.streams
+            summary: 'Patch an entry.'
+            operationId: core.streams.patch
+            responses:
+                200:
+                    description: 'Entry patched successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/core.streams'
+                                    links:
+                                        type: object
+                                        properties:
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/core.streams'
+        delete:
+            tags:
+                - Core.streams
+            summary: 'Delete an entry.'
+            operationId: core.streams.delete
+            responses:
+                204:
+                    description: 'Entry deleted successfully.'
+    /api/streams/core.applications/entries:
+        get:
+            tags:
+                - Applications
+            summary: 'List multiple entries.'
+            operationId: core.applications.index
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            total:
+                                                type: integer
+                                            per_page:
+                                                type: integer
+                                            last_page:
+                                                type: integer
+                                            current_page:
+                                                type: integer
+                                            stream:
+                                                type: string
+                                            query:
+                                                type: array
+                                    links:
+                                        type: object
+                                        properties:
+                                            first_page:
+                                                type: string
+                                            next_page:
+                                                type: string
+                                                nullable: true
+                                            previous_page:
+                                                type: string
+                                                nullable: true
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/core.applications'
+        post:
+            tags:
+                - Applications
+            summary: 'Create a new entry.'
+            operationId: core.applications.create
+            responses:
+                200:
+                    description: 'Entry created successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/core.applications'
+                                    links:
+                                        type: object
+                                        properties:
+                                            location:
+                                                description: 'The URL of the newly created entry.'
+                                                type: string
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/core.applications'
+    '/api/streams/core.applications/entries/{id}':
+        get:
+            tags:
+                - Applications
+            summary: 'Show an entry.'
+            operationId: core.applications.show
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                    links:
+                                        type: object
+                                        properties:
+                                            self:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            entries:
+                                                type: string
+                                    data:
+                                        $ref: '#/components/schemas/core.applications'
+        put:
+            tags:
+                - Applications
+            summary: 'Update an entry.'
+            operationId: core.applications.update
+            responses:
+                200:
+                    description: 'Entry updated successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/core.applications'
+                                    links:
+                                        type: object
+                                        properties:
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/core.applications'
+        patch:
+            tags:
+                - Applications
+            summary: 'Patch an entry.'
+            operationId: core.applications.patch
+            responses:
+                200:
+                    description: 'Entry patched successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/core.applications'
+                                    links:
+                                        type: object
+                                        properties:
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/core.applications'
+        delete:
+            tags:
+                - Applications
+            summary: 'Delete an entry.'
+            operationId: core.applications.delete
+            responses:
+                204:
+                    description: 'Entry deleted successfully.'
+    /api/streams/todos/entries:
+        get:
+            tags:
+                - Todos
+            summary: 'List multiple entries.'
+            operationId: todos.index
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            total:
+                                                type: integer
+                                            per_page:
+                                                type: integer
+                                            last_page:
+                                                type: integer
+                                            current_page:
+                                                type: integer
+                                            stream:
+                                                type: string
+                                            query:
+                                                type: array
+                                    links:
+                                        type: object
+                                        properties:
+                                            first_page:
+                                                type: string
+                                            next_page:
+                                                type: string
+                                                nullable: true
+                                            previous_page:
+                                                type: string
+                                                nullable: true
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/todos'
+        post:
+            tags:
+                - Todos
+            summary: 'Create a new entry.'
+            operationId: todos.create
+            responses:
+                200:
+                    description: 'Entry created successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/todos'
+                                    links:
+                                        type: object
+                                        properties:
+                                            location:
+                                                description: 'The URL of the newly created entry.'
+                                                type: string
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/todos'
+    '/api/streams/todos/entries/{id}':
+        get:
+            tags:
+                - Todos
+            summary: 'Show an entry.'
+            operationId: todos.show
+            responses:
+                200:
+                    description: OK
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                    links:
+                                        type: object
+                                        properties:
+                                            self:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            entries:
+                                                type: string
+                                    data:
+                                        $ref: '#/components/schemas/todos'
+        put:
+            tags:
+                - Todos
+            summary: 'Update an entry.'
+            operationId: todos.update
+            responses:
+                200:
+                    description: 'Entry updated successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/todos'
+                                    links:
+                                        type: object
+                                        properties:
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/todos'
+        patch:
+            tags:
+                - Todos
+            summary: 'Patch an entry.'
+            operationId: todos.patch
+            responses:
+                200:
+                    description: 'Entry patched successfully.'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    meta:
+                                        type: object
+                                        properties:
+                                            stream:
+                                                type: string
+                                            entry:
+                                                type: string
+                                            payload:
+                                                $ref: '#/components/schemas/todos'
+                                    links:
+                                        type: object
+                                        properties:
+                                            entries:
+                                                type: string
+                                            stream:
+                                                type: string
+                                            self:
+                                                type: string
+                                    errors:
+                                        type: array
+                                        items:
+                                            type: object
+                                            properties:
+                                                message:
+                                                    type: string
+                                                meta:
+                                                    type: object
+                                                    properties:
+                                                        field:
+                                                            type: string
+                                    data:
+                                        type: array
+                                        items:
+                                            $ref: '#/components/schemas/todos'
+        delete:
+            tags:
+                - Todos
+            summary: 'Delete an entry.'
+            operationId: todos.delete
+            responses:
+                204:
+                    description: 'Entry deleted successfully.'
+components:
+    schemas:
+        core.streams:
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
+                description:
+                    type: string
+                config:
+                    type: array
+                fields:
+                    type: array
+        core.applications:
+            type: object
+            properties:
+                handle:
+                    type: string
+                match:
+                    type: array
+                config:
+                    type: array
+        todos:
+            type: object
+            properties:
+                id:
+                    type: string
+                    pattern: uuid
+                title:
+                    type: string
+                complete:
+                    type: boolean
+tags:
+    core.streams:
+        name: Core.streams
+    core.applications:
+        name: Applications
+    todos:
+        name: Todos
+        description: 'An example todos app.'

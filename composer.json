@@ -11,8 +11,8 @@
         "laravel/framework": "^8.54",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "streams/api": "^1.0",
-        "streams/core": "^2.0"
+        "streams/core": "^2.0",
+        "streams/api": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
