@@ -15,6 +15,7 @@
             "type": "string",
             "required": true
         },
-        "complete": "boolean"
+        "complete": "boolean",
+        "editing": "boolean"
     }
 }

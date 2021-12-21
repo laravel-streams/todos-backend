@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "054fc4f35103d92ce023f6d1672d602a",
+    "content-hash": "0693d06d97720c59cf5fbb4b8d75289c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3595,26 +3595,29 @@
         },
         {
             "name": "streams/api",
-            "version": "1.0.x-dev",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-streams/streams-api.git",
-                "reference": "50bc59e831adf92349affa5b34526fb8e25a8047"
+                "reference": "22c5b4abe0d3f6c18ca46b8578c734e96af02a40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-streams/streams-api/zipball/50bc59e831adf92349affa5b34526fb8e25a8047",
-                "reference": "50bc59e831adf92349affa5b34526fb8e25a8047",
+                "url": "https://api.github.com/repos/laravel-streams/streams-api/zipball/22c5b4abe0d3f6c18ca46b8578c734e96af02a40",
+                "reference": "22c5b4abe0d3f6c18ca46b8578c734e96af02a40",
                 "shasum": ""
             },
             "require": {
                 "streams/core": "^2.0"
             },
-            "default-branch": true,
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.4"
+            },
             "type": "streams-addon",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-master": "1.x-dev",
+                    "dev-develop": "1.1.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -3640,9 +3643,9 @@
             "description": "A RESTful API for Laravel Streams.",
             "support": {
                 "issues": "https://github.com/laravel-streams/streams-api/issues",
-                "source": "https://github.com/laravel-streams/streams-api/tree/1.0"
+                "source": "https://github.com/laravel-streams/streams-api/tree/develop"
             },
-            "time": "2021-12-16T16:11:57+00:00"
+            "time": "2021-12-21T15:37:54+00:00"
         },
         {
             "name": "streams/core",
@@ -3650,12 +3653,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-streams/streams-core.git",
-                "reference": "9bb14ce36e89661909e847122dd4c09fae6a3f43"
+                "reference": "5fe0189df1c0df7e16dbfae2c66eb20253485835"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-streams/streams-core/zipball/9bb14ce36e89661909e847122dd4c09fae6a3f43",
-                "reference": "9bb14ce36e89661909e847122dd4c09fae6a3f43",
+                "url": "https://api.github.com/repos/laravel-streams/streams-core/zipball/5fe0189df1c0df7e16dbfae2c66eb20253485835",
+                "reference": "5fe0189df1c0df7e16dbfae2c66eb20253485835",
                 "shasum": ""
             },
             "require": {
@@ -3715,7 +3718,7 @@
                 "issues": "https://github.com/laravel-streams/streams-core/issues",
                 "source": "https://github.com/laravel-streams/streams-core/tree/develop"
             },
-            "time": "2021-12-16T20:22:31+00:00"
+            "time": "2021-12-19T20:34:58+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
