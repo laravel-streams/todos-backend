@@ -56,3 +56,7 @@ Then, run the database migration:
 ```bash
 php artisan migrate --path=database/migrations
 ```
+
+### Other Storage Options
+
+You may choose any supported [source adapter](https://streams.dev/docs/core/sources) for your data storage.
