@@ -24,7 +24,7 @@ The stream definition and the corresponding data can be found in the `/streams` 
 To use a Laravel supported database first update the stream configuration:
 
 ```json
-# /streams/todos.json
+// streams/todos.json
 {
     "config": {
         "source": {
