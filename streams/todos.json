@@ -2,12 +2,6 @@
     "name": "Todos",
     "handle": "todos",
     "description": "An example todos app.",
-    "config": {
-        "source": {
-            "type": "database",
-            "table": "todos"
-        }
-    },
     "fields": {
         "id": {
             "type": "uuid",
