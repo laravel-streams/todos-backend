@@ -14,9 +14,9 @@ class CreateTodosTable extends Migration
     public function up()
     {
         Schema::create('todos', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->unique();
             $table->text('title');
-            $table->boolean('complete');
+            $table->boolean('complete')->default(false);
         });
     }
 
