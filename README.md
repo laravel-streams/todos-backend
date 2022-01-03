@@ -1,6 +1,6 @@
 ## Introduction
 
-This todos application backend uses the [Streams API](https://streams.dev/docs/api/introduction).
+A simple todos application backend powered by the [Streams API](https://streams.dev/docs/api/introduction).
 
 ### Frontend Options
 
@@ -12,3 +12,31 @@ This todos application backend uses the [Streams API](https://streams.dev/docs/a
 - Run `composer install` within the project.
 - Run `cp .env.example .env` and adjust as needed.
 - Use `php artisan serve` to start your local server.
+
+## The Basics
+
+This backend uses a single `todos` stream configured to use flat-file JSON data by default.
+
+The stream definition and the corresponding data can be found in the `/streams` directory.
+
+### Using A Laravel Database
+
+To use a Laravel supported database first update the stream configuration:
+
+```json
+// streams/todos.json
+{
+    "config": {
+        "source": {
+            "type": "database",
+            "table": "todos"
+        }
+    }
+}
+```
+
+Then, run the database migration:
+
+```bash
+php artisan migrate --path=database/migrations
+```
