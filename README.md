@@ -13,13 +13,9 @@ A simple todos application backend powered by the [Streams API](https://streams.
 - Run `cp .env.example .env` and adjust as needed.
 - Use `php artisan serve` to start your local server.
 
-## The Basics
-
-This backend uses a single `todos` stream configured to use flat-file JSON data by default.
-
-The stream definition and the corresponding data can be found in the `/streams` directory.
-
 ### Your First Todo
+
+The API is now ready to use:
 
 ```curl
 curl --location --request POST 'http://127.0.0.1:8000/api/streams/todos/entries' \
@@ -28,6 +24,16 @@ curl --location --request POST 'http://127.0.0.1:8000/api/streams/todos/entries'
     "title": "Your first todo!"
 }'
 ```
+
+## The Basics
+
+This backend uses a single `todos` stream configured to use flat-file JSON data by default.
+
+The stream definition and the corresponding data can be found in the `/streams` directory.
+
+### Committing Data
+
+To version control your data, delete the `/streams/data/.gitignore` file.
 
 ### Using A Laravel Database
 
