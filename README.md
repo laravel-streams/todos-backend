@@ -19,6 +19,16 @@ This backend uses a single `todos` stream configured to use flat-file JSON data 
 
 The stream definition and the corresponding data can be found in the `/streams` directory.
 
+### Your First Todo
+
+```curl
+curl --location --request POST 'http://127.0.0.1:8000/api/streams/todos/entries' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "title": "Your first todo!"
+}'
+```
+
 ### Using A Laravel Database
 
 To use a Laravel supported database first update the stream configuration:
