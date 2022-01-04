@@ -14,12 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        for($i=0; $i<50; $i++) {
-            $todo = Streams::make('todos')->factory()->create([
-                'editing' => false
-            ]);
-            $todo->save();
-            dump($todo->getAttributes());
-        }
+        Streams::factory('todos')->collection(10)->each(
+            fn ($entry) => $entry->save()
+        );
     }
 }

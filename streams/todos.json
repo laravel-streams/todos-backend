@@ -10,6 +10,7 @@
     "fields": {
         "id": {
             "type": "uuid",
+            "required": true,
             "unique": true,
             "config": {
                 "default": true
