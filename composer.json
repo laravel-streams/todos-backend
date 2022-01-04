@@ -37,6 +37,7 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "Streams\\Core\\Support\\ComposerScripts::update",
             "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [

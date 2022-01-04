@@ -2,10 +2,14 @@
     "name": "Todos",
     "handle": "todos",
     "description": "An example todos app.",
+    "config": {
+        "cache": {
+            "enabled": true
+        }
+    },
     "fields": {
         "id": {
             "type": "uuid",
-            "required": true,
             "unique": true,
             "config": {
                 "default": true
@@ -15,7 +19,17 @@
             "type": "string",
             "required": true
         },
-        "complete": "boolean",
-        "editing": "boolean"
+        "complete": {
+            "type": "boolean",
+            "config": {
+                "default": false
+            }
+        },
+        "editing": {
+            "type": "boolean",
+            "config": {
+                "default": false
+            }
+        }
     }
 }
