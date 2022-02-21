@@ -25,6 +25,12 @@
             "config": {
                 "default": false
             }
+        },
+        "editing": {
+            "type": "boolean",
+            "config": {
+                "default": false
+            }
         }
     }
 }
